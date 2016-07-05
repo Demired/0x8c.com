@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>全栈</title>
+<link rel="shortcut icon" href="favicon.ico" >
+<style type="text/css">
+*{
+	margin:0;padding:0;border:0;
+}
+#say{color: #fff;
+    text-align: center;
+    background-color: #1d7ad9;}
+	
+</style>
+</head>
+<body>
+<h1 id="say"></h1>
+<script type="text/javascript">
+	'use scrict';
+	var sayList = [
+		'吃饭和睡觉是最浪费时间的两件事了',
+		'一闻犬吠，就知道是产品在骂爹',
+		'这世上只有10种人，知道二进制的和不知道二进制的',
+		'听说你精通C语言啊',
+		'美国那个华莱士,比你们高不知道哪里去了,我跟他谈笑风生',
+		'道歉时露出胸部是常识吧',
+		'我每天只睡半个小时',
+		'我吃饭比拉屎都少',
+		'I\'m sorry. I am a electrical power engineer.',
+		'我还记得那些精彩的瞬间',
+		'我最讨厌造轮子了'
+	]; 
+	var i = Math.floor(Math.random() * sayList.length);
+	document.getElementById("say").innerHTML=sayList[i];
+</script>
+</body>
+</html>
