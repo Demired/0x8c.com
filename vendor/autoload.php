@@ -58,8 +58,8 @@ class Handler
         if (!$this->validate()) {
             return false;
         }
-
-        exec("git --work-tree={$this->gitDir} pull -f {$this->remote}", $this->gitOutput);
+        $command = "sudo git --work-tree={$this->gitDir} pull -f {$this->remote}";
+        exec($command, $this->gitOutput);
         return true;
     }
 

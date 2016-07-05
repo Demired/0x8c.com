@@ -5,7 +5,7 @@ use GitHubWebhook\Handler;
 
 $handler = new Handler("123456", __DIR__,"origin master");
 if($handler->handle()) {
-    file_put_contents('true','ok');
+    echo 'ok';
 } else {
-    file_put_contents('false','Wrong secret');
+    echo 'Wrong secret';
 }
