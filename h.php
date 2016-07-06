@@ -99,14 +99,12 @@ class Hooks
             // see https://developer.github.com/webhooks/securing/
             return false;
         }
-
         $payloadHash = hash_hmac($algo, $payload, $this->secret);
         return ($payloadHash === $gitHubSignature);
     }
 
 
 }
-
 
 $hooks = new Hooks("123456", __DIR__,"origin master");
 
