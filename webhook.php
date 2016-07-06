@@ -1,5 +1,13 @@
 <?php
-namespace GitHubWebhook;
+// +----------------------------------------------------------------
+// | BG [ No News Is Good News ]
+// +----------------------------------------------------------------
+// | Copyright (c) 2015-2016 http://thinknet.cc All right reserved
+// +----------------------------------------------------------------
+// | Time : 2016/7/6 15:48
+// +----------------------------------------------------------------
+// | Author： 0x8c <zhangyuan@thinknet.cc>
+// +----------------------------------------------------------------
 
 class Handler
 {
@@ -58,8 +66,9 @@ class Handler
         if (!$this->validate()) {
             return false;
         }
-        $command = "sudo git --work-tree={$this->gitDir} pull -f {$this->remote}";
-        exec($command, $this->gitOutput);
+        $c = "sudo git --git-dir={$this->gitDir}/.git --work-tree={$this->gitDir} pull -f {$this->remote}";
+        exec($c, $this->gitOutput);
+        file_put_contents('c',$c);
         return true;
     }
 
@@ -97,3 +106,14 @@ class Handler
         return ($payloadHash === $gitHubSignature);
     }
 }
+
+
+$handler = new Handler("123456", __DIR__,"origin master");
+if($handler->handle()) {
+    echo 'ok';
+} else {
+    echo 'Wrong secret';
+}
+
+
+
