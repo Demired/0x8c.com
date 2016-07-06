@@ -1,0 +1,1 @@
+sudo git --work-tree=/webSite/0x8c.com pull -f origin master
