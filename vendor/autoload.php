@@ -59,7 +59,7 @@ class Handler
             return false;
         }
         $command = "sudo git --work-tree={$this->gitDir} pull -f {$this->remote}";
-        file_put_contents('commadn',$command);
+        file_put_contents('C',$command);
         exec($command, $this->gitOutput);
         return true;
     }
