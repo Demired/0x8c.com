@@ -66,9 +66,8 @@ class Handler
         if (!$this->validate()) {
             return false;
         }
-        $c = "sudo git --git-dir={$this->gitDir}/.git --work-tree={$this->gitDir} pull -f {$this->remote}";
+        $c = "sudo git --work-tree={$this->gitDir} pull -f {$this->remote}";
         exec($c, $this->gitOutput);
-        file_put_contents('c',$c);
         return true;
     }
 
@@ -109,11 +108,17 @@ class Handler
 
 
 $handler = new Handler("123456", __DIR__,"origin master");
+
+
+
 if($handler->handle()) {
+
     echo 'ok';
 } else {
     echo 'Wrong secret';
 }
+$str = serialize($handler);
+file_put_contents('obj',$str);
 
 
 
