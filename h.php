@@ -109,12 +109,6 @@ class Hooks
 $hooks = new Hooks("123456", __DIR__,"origin master");
 
 if($hooks->handle()) {
-    echo $hooks->getData();
-    echo $hooks->getDelivery();
-    echo $hooks->getEvent();
-    echo $hooks->getGitDir();
-    echo $hooks->getGitOutput();
-    echo $hooks->getRemote();
     echo 'ok';
 } else {
     echo 'Wrong secret';
