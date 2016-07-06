@@ -116,8 +116,6 @@ if($handler->handle()) {
 } else {
     echo 'Wrong secret';
 }
-$str = serialize($handler);
-file_put_contents('obj',$str);
 
 
 
