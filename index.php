@@ -9,3 +9,5 @@
 // | Author： 0x8c <zhangyuan@thinknet.cc>
 // +----------------------------------------------------------------
 echo time();
+echo time();
+echo time();
